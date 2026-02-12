@@ -1,0 +1,229 @@
+:root {
+    --bg-color: #f5f7fa;
+    --card-bg: #ffffff;
+    --card-border: #e2e8f0;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --input-bg: #ffffff;
+    --input-border: #cbd5e1;
+    --input-focus-border: #3b82f6;
+    --accent: #3b82f6;
+    --accent-hover: #2563eb;
+    --error-color: #dc2626;
+    --success-color: #16a34a;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    color: var(--text-main);
+    background: url('image.png') center center / cover no-repeat;
+    padding: 24px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.glass-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 32px;
+    box-shadow: var(--shadow-md);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 1.25rem;
+    position: relative;
+    z-index: 1;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.header p {
+    margin: 0.5rem 0 0;
+    color: var(--text-muted);
+    font-size: 0.97rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+    font-weight: 700;
+    font-size: 0.86rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    border: 1px solid var(--input-border);
+    background: var(--input-bg);
+    color: var(--text-main);
+    font-size: 0.9375rem;
+    transition: border-color 0.15s ease;
+}
+
+.form-control::placeholder {
+    color: #94a3b8;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--input-focus-border);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.btn-submit {
+    margin-top: 0.5rem;
+    width: 100%;
+    border: 0;
+    border-radius: 6px;
+    padding: 0.75rem;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: #ffffff;
+    background: var(--accent);
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-submit:hover {
+    background: var(--accent-hover);
+}
+
+.btn-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: var(--accent);
+}
+
+.secondary-link {
+    margin-top: 1rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    position: relative;
+    z-index: 1;
+}
+
+.secondary-link a {
+    color: var(--accent);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.secondary-link a:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+#response-message {
+    margin-top: 1rem;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    text-align: center;
+    display: none;
+}
+
+.message-success {
+    background: #dcfce7;
+    border: 1px solid #86efac;
+    color: var(--success-color);
+}
+
+.message-error {
+    background: #fee2e2;
+    border: 1px solid #fca5a5;
+    color: var(--error-color);
+}
+
+.dashboard-text {
+    margin: 0.35rem 0 1rem;
+    color: var(--text-muted);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+    display: none;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+@media (max-width: 640px) {
+    body {
+        padding: 16px;
+        align-items: flex-start;
+    }
+
+    .container {
+        margin-top: 24px;
+    }
+
+    .glass-card {
+        padding: 24px;
+    }
+
+    .header h1 {
+        font-size: 1.25rem;
+    }
+
+    .btn-submit {
+        padding: 0.6875rem;
+    }
+}
